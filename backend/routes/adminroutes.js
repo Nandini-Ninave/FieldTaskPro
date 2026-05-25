@@ -3,7 +3,9 @@ const {auth, adminOrEditor} = require("../middleware/auth");
 const router=express.Router()
 const {login, registerUser, adminReg, checkAdmin, updateUser, deleteUser, getUsers, createZone,  getAllAttendance, getAuditLogs, createOrganization, getOrganizations, updateOrganization, deleteOrganization, createPlan, updatePlan, deletePlan, getzones, updateAttendance, exportAttendanceCsv, exportAttendancePdf, getAllPlans, getPlanById, getAllSubscriptions, getSubscriptionByOrg, getSubscriptionById, createSubscription, updateSubscription, deleteSubscription, deleteBillingRecord, updateBillingRecord, createBillingRecord, getBillingById, getBillingBySubscription, getAllBillingRecords, getActiveSession, getEmployeeTrack, getLiveEmployees}=require("../controllers/admincont");
 
-
+router.get("/",(req,res)=> {
+    res.send("backend running")
+})
 router.post("/adminreg",adminReg)
 router.post("/userReg",auth, registerUser)
 router.post("/login",login)
