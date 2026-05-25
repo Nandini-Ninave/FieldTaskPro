@@ -1,0 +1,199 @@
+/* =========================
+   PAGE
+========================= */
+
+.userPage{
+  min-height: 100vh;
+  background: #e9e9ef;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  color:black
+}
+
+
+/* =========================
+   FORM BOX
+========================= */
+
+.formBox{
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+}
+
+.formBox h1{
+  margin-bottom: 20px;
+  color: #000f2a;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.formBox input,
+.formBox select{
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+}
+
+.formBox input:focus,
+.formBox select:focus{
+  border-color: #4f46e5;
+}
+
+
+/* =========================
+   MULTI SELECT
+========================= */
+
+.zoneSelect{
+  min-height: 120px;
+}
+
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.checkRow{
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.checkRow label{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #374151;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.formBox button{
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.formBox button:hover{
+  background: #4338ca;
+}
+
+
+/* =========================
+   TABLE BOX
+========================= */
+
+.tableBox{
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead{
+  background: #000f2a;
+  color: white;
+}
+
+th{
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+}
+
+td{
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  color: #374151;
+}
+
+tr:hover{
+  background: #f9fafb;
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.editBtn{
+  background: #059669;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.editBtn:hover{
+  background: #047857;
+}
+
+.deleteBtn{
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.deleteBtn:hover{
+  background: #b91c1c;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .userPage{
+    padding: 15px;
+  }
+
+  .checkRow{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  table{
+    min-width: 900px;
+  }
+}

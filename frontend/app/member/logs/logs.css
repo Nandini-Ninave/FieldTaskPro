@@ -1,0 +1,44 @@
+/* PAGE WRAPPER */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin: 20px;
+  font-family: sans-serif;
+}
+
+/* TITLE */
+h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #111827;
+}
+
+/* EMPTY STATE */
+p {
+  color: #6b7280;
+}
+
+/* LOG ITEM */
+.item {
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  transition: 0.2s;
+}
+
+.item:hover {
+  transform: translateY(-2px);
+  background: #eef2ff;
+  border-color: #c7d2fe;
+}
+
+/* TEXT */
+.item p {
+  margin: 4px 0;
+  color: #374151;
+  font-size: 14px;
+}

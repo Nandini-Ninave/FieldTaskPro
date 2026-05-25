@@ -1,0 +1,61 @@
+.page {
+  padding: 30px;
+  min-height: 100vh;
+  background: #e9ecf5;
+}
+
+/* TITLE */
+
+.page h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+  max-width: 500px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* HEADER INSIDE CARD */
+
+.card h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+/* TEXT */
+
+.card p {
+  font-size: 15px;
+  color: #374151;
+  margin: 8px 0;
+}
+
+/* LABEL STYLE */
+
+.card p span {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* EMPTY STATE */
+
+.empty {
+  color: #6b7280;
+  font-size: 14px;
+}

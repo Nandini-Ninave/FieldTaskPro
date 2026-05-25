@@ -1,0 +1,93 @@
+/* PAGE */
+.container {
+  padding: 25px;
+  min-height: 100vh;
+  background: #e9ecf5;
+  font-family: sans-serif;
+}
+
+/* TITLE */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  max-width: 420px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 14px;
+  background: white;
+  transition: 0.2s;
+  color:black
+}
+
+input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* BUTTON WRAP */
+.buttonBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0 25px;
+}
+
+/* BUTTONS */
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.2s;
+  background: #111827;
+  color: white;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: #1f2937;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+}
+
+/* ITEM LIST */
+.item {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+/* HEADINGS INSIDE CARD */
+.card h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #111827;
+}
+
+/* TEXT */
+p {
+  margin: 4px 0;
+  color: #374151;
+}

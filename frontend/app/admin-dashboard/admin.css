@@ -1,0 +1,114 @@
+.dashboard{
+    display:flex;
+    min-height:100vh;
+    background:#e9e9ef;
+}
+
+.sidebar{
+    width:260px;
+    background:#000f2a;
+    color:white;
+    padding:30px;
+}
+
+.logo{
+    font-size:32px;
+    margin-bottom:50px;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.menu p{
+    cursor:pointer;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.menu p:hover{
+    color:#60a5fa;
+}
+
+/* Main */
+
+.main{
+    flex:1;
+    padding:40px;
+}
+
+/* Topbar */
+
+.topbar{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.topbar h1{
+    font-size:38px;
+    color:#000f2a;
+}
+
+.topbar p{
+    margin-top:8px;
+    color:gray;
+}
+
+.role{
+    background:#dbeafe;
+    color:#1d4ed8;
+    padding:12px 25px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+/* Cards Grid */
+.maincards {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* FIX: support BOTH class names (card + maincard) */
+.maincard,
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+    cursor: pointer;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Hover effect */
+.maincard:hover,
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Text styling */
+.maincard h2,
+.card h2 {
+    color: #000f2a;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.maincard p,
+.card p {
+    color: gray;
+    font-size: 14px;
+}

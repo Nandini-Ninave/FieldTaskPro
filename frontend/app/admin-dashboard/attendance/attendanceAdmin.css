@@ -1,0 +1,110 @@
+.attendance-admin-page {
+  padding: 20px;
+  background: #0f172a;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Title */
+.attendance-admin-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+/* Summary */
+.attendance-admin-summary {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.attendance-admin-card {
+  background: #1e293b;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  min-width: 120px;
+}
+
+/* Inputs */
+.attendance-admin-inputs input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #ffffff;
+  outline: none;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+/* Keep color stable on refresh + focus */
+.attendance-admin-inputs input:focus {
+  border-color: #3b82f6;
+  background: #0b1220;
+}
+
+/* Prevent browser autofill yellow/white flash */
+.attendance-admin-inputs input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #0f172a inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Buttons */
+.attendance-admin-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.attendance-admin-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+}
+
+/* Table */
+.attendance-admin-table-wrap {
+  overflow-x: auto;
+  background: #1e293b;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.attendance-admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+.attendance-admin-table th,
+.attendance-admin-table td {
+  padding: 10px;
+  border-bottom: 1px solid #334155;
+}
+
+/* Action buttons in table */
+.attendance-admin-actions-cell {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.attendance-admin-actions-cell button {
+  padding: 5px 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Modal */
+.attendance-admin-modal {
+  position: fixed;
+  top: 30%;
+  left: 40%;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+}
