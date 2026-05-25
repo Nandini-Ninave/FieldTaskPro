@@ -76,6 +76,7 @@ export default function AdminRegister() {
         },
       }
     );
+    console.log(res)
     router.push("/login");
   } catch (err) {
     console.log(err)
