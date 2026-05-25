@@ -33,4 +33,4 @@ const billingRecordSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("BillingRecord", billingRecordSchema);
+module.exports = mongoose.model("billingRecord", billingRecordSchema);
