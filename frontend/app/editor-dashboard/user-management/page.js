@@ -55,7 +55,7 @@
       try {
 
         const res = await axios.get(
-          "http://localhost:5000/editor/users",
+          "${process.env.NEXT_PUBLIC_API_URL}/editor/users",
           {
             headers: {
               Authorization:
@@ -85,7 +85,7 @@
 
           const res =
             await axios.get(
-              "http://localhost:5000/admin/getOrganizations"
+              "${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations"
             );
 
           setOrganizations(
@@ -109,7 +109,7 @@
       try {
 
         const res = await axios.get(
-          "http://localhost:5000/admin/getzones"
+          "${process.env.NEXT_PUBLIC_API_URL}/admin/getzones"
         );
 
         setZones(res.data);
@@ -176,7 +176,7 @@
         }
 
         await axios.post(
-          "http://localhost:5000/editor/userReg",
+          "${process.env.NEXT_PUBLIC_API_URL}/editor/userReg",
 
           payload,
 
@@ -211,7 +211,7 @@
       try {
 
         await axios.delete(
-          `http://localhost:5000/editor/delete-user/${id}`,
+          `${process.env.NEXT_PUBLIC_API_URL}/editor/delete-user/${id}`,
           {
             headers: {
               Authorization:
@@ -299,7 +299,7 @@
         }
 
         await axios.put(
-          `http://localhost:5000/editor/update-user/${editId}`,
+          `${process.env.NEXT_PUBLIC_API_URL}/editor/update-user/${editId}`,
 
           payload,
 

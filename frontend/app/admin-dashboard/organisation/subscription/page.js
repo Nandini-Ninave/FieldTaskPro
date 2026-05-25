@@ -18,22 +18,22 @@ function Subscriptions() {
   const [editId, setEditId] = useState(null);
 
   const loadSubscriptions = async () => {
-    const res = await axios.get("http://localhost:5000/admin/getAllSubscriptions");
+    const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getAllSubscriptions");
     setSubscriptions(res.data.data);
   };
 
   const loadOrganizations = async () => {
-    const res = await axios.get("http://localhost:5000/admin/getOrganizations");
+    const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations");
     setOrganizations(res.data);
   };
 
   const loadPlans = async () => {
-    const res = await axios.get("http://localhost:5000/admin/getAllPlans");
+    const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getAllPlans");
     setPlans(res.data.data);
   };
 
   const createSubscription = async () => {
-    await axios.post("http://localhost:5000/admin/createSubscription", {
+    await axios.post("${process.env.NEXT_PUBLIC_API_URL}/admin/createSubscription", {
       organization,
       plan,
       status,
@@ -46,7 +46,7 @@ function Subscriptions() {
   };
 
   const updateSubscription = async () => {
-    await axios.put(`http://localhost:5000/admin/updateSubscription/${editId}`, {
+    await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/admin/updateSubscription/${editId}`, {
       organization,
       plan,
       status,
@@ -59,7 +59,7 @@ function Subscriptions() {
   };
 
   const deleteSubscription = async (id) => {
-    await axios.delete(`http://localhost:5000/admin/deleteSubscription/${id}`);
+    await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/admin/deleteSubscription/${id}`);
     loadSubscriptions();
   };
 

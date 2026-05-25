@@ -22,7 +22,7 @@ export default function AttendanceAdmin() {
     setLoading(true);
     try {
       const res = await axios.get(
-        "http://localhost:5000/editor/all",
+        "${process.env.NEXT_PUBLIC_API_URL}/editor/all",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -70,7 +70,7 @@ export default function AttendanceAdmin() {
   const updateAttendance = async (id, payload) => {
     try {
       await axios.put(
-        `http://localhost:5000/editor/update/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/editor/update/${id}`,
         payload,
         {
           headers: {
@@ -88,20 +88,20 @@ export default function AttendanceAdmin() {
 
   const downloadCSV = (id) =>
     window.open(
-      `http://localhost:5000/editor/attendance/csv/${id}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/editor/attendance/csv/${id}`,
       "_blank"
     );
 
   const downloadPDF = (id) =>
     window.open(
-      `http://localhost:5000/editor/attendance/pdf/${id}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/editor/attendance/pdf/${id}`,
       "_blank"
     );
 
   const punchIn = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/editor/punch",
+        "${process.env.NEXT_PUBLIC_API_URL}/editor/punch",
         {
           userId,
           action: "in",
@@ -120,7 +120,7 @@ export default function AttendanceAdmin() {
   const punchOut = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/editor/punch",
+        "${process.env.NEXT_PUBLIC_API_URL}/editor/punch",
         {
           userId,
           action: "out",

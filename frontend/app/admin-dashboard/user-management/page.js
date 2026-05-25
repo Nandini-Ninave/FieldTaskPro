@@ -36,7 +36,7 @@
 
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/admin/users",
+        const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/users",
           {
             headers: {
               Authorization:
@@ -54,7 +54,7 @@
       async () => {
         try {
           const res =
-            await axios.get("http://localhost:5000/admin/getOrganizations")
+            await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations")
           setOrganizations(
             res.data
           );
@@ -65,7 +65,7 @@
 
     const fetchZones = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/admin/getzones")
+        const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getzones")
         setZones(res.data);
       } catch (err) {
         console.log(err);
@@ -103,7 +103,7 @@
         ) {
           payload.assignedZones = [];
         }
-        await axios.post("http://localhost:5000/admin/userReg", payload,
+        await axios.post("${process.env.NEXT_PUBLIC_API_URL}/admin/userReg", payload,
           {
             headers: {
               Authorization:
@@ -121,7 +121,7 @@
 
     const deleteUser = async (id) => {
       try {
-        await axios.delete(`http://localhost:5000/admin/delete-user/${id}`,
+        await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/admin/delete-user/${id}`,
           {
             headers: {
               Authorization:
@@ -159,7 +159,7 @@
         if (formData.attendanceMode === "B"){
           payload.assignedZones = [];
         }
-        await axios.put(`http://localhost:5000/admin/update-user/${editId}`, payload,
+        await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/admin/update-user/${editId}`, payload,
           {
             headers: {
               Authorization:

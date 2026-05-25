@@ -146,7 +146,7 @@ export default function LiveTracking() {
 
         const res =
           await axios.get(
-            `http://localhost:5000/admin/live/${organizationId}`
+            `${process.env.NEXT_PUBLIC_API_URL}/admin/live/${organizationId}`
           );
 
         console.log(
@@ -178,7 +178,7 @@ export default function LiveTracking() {
 
         const res =
           await axios.get(
-            `http://localhost:5000/admin/track/${attendanceId}`
+            `${process.env.NEXT_PUBLIC_API_URL}/admin/track/${attendanceId}`
           );
 
         console.log(

@@ -14,7 +14,7 @@ function Profile() {
   const getProfile = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/member/profile/${userId}`
+        `${process.env.NEXT_PUBLIC_API_URL}/member/profile/${userId}`
       );
 
       setProfile(res.data);

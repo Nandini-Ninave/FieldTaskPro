@@ -12,7 +12,7 @@ function Logs() {
   const getLogs = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/member/auditLogs/${userId}`
+        `${process.env.NEXT_PUBLIC_API_URL}/member/auditLogs/${userId}`
       );
 
       setLogs(res.data || []);

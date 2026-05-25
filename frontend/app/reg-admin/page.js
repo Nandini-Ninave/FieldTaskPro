@@ -30,7 +30,7 @@ export default function AdminRegister() {
 
           const res =
             await axios.get(
-              "http://localhost:5000/admin/getOrganizations"
+              "${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations"
             );
 
           setOrganizations(
@@ -52,7 +52,7 @@ export default function AdminRegister() {
     const fetchZones = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/admin/getzones"
+          "${process.env.NEXT_PUBLIC_API_URL}/admin/getzones"
         );
         setZones(res.data);
       } catch (err) {
@@ -68,7 +68,7 @@ export default function AdminRegister() {
   try {
     // console.log(state.token);
     const res = await axios.post(
-      "http://localhost:5000/admin/adminreg",
+      "${process.env.NEXT_PUBLIC_API_URL}/admin/adminreg",
       form,
       {
         headers: {

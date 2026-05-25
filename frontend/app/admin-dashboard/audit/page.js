@@ -33,7 +33,7 @@ const { state, logout } =
 
       const res =
         await axios.get(
-          "http://localhost:5000/admin/audit-logs",
+          "${process.env.NEXT_PUBLIC_API_URL}/admin/audit-logs",
           {
             headers: {
               Authorization:

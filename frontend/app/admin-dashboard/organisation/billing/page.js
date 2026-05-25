@@ -16,18 +16,18 @@ function Billing() {
 
   // Fix 1: wrong URL — was pointing to getAllSubscriptions instead of getAllBillingRecords
   const loadRecords = async () => {
-    const res = await axios.get("http://localhost:5000/admin/getAllBillingRecords");
+    const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getAllBillingRecords");
     setRecords(res.data.data || []);
   };
 
   // Fix 2: loadSubscriptions was missing entirely
   const loadSubscriptions = async () => {
-    const res = await axios.get("http://localhost:5000/admin/getAllSubscriptions");
+    const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getAllSubscriptions");
     setSubscriptions(res.data.data || []);
   };
 
   const createRecord = async () => {
-    await axios.post("http://localhost:5000/admin/createBillingRecord", {
+    await axios.post("${process.env.NEXT_PUBLIC_API_URL}/admin/createBillingRecord", {
       subscription,
       amount,
       paymentStatus,
@@ -38,7 +38,7 @@ function Billing() {
   };
 
   const updateRecord = async () => {
-    await axios.put(`http://localhost:5000/admin/updateBillingRecord/${editId}`, {
+    await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/admin/updateBillingRecord/${editId}`, {
       subscription,
       amount,
       paymentStatus,
@@ -49,7 +49,7 @@ function Billing() {
   };
 
   const deleteRecord = async (id) => {
-    await axios.delete(`http://localhost:5000/admin/deleteBillingRecord/${id}`);
+    await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/admin/deleteBillingRecord/${id}`);
     loadRecords();
   };
 

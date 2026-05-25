@@ -6,7 +6,7 @@ import axios from "axios";
 export default function Home() {
   const [adminExists, setAdminExists] = useState(false);
   useEffect(() => {
-    axios.get("http://localhost:5000/admin/check-admin").then((res)=>{
+    axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/check-admin").then((res)=>{
       setAdminExists(res.data.exists);
     }).catch ((err)=> {
       console.log(err);

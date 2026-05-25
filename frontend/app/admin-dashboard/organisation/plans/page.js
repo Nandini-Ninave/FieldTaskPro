@@ -14,7 +14,7 @@ function Plans() {
 
   const loadPlans = async () => {
     const res = await axios.get(
-      "http://localhost:5000/admin/getAllPlans"
+      "${process.env.NEXT_PUBLIC_API_URL}/admin/getAllPlans"
     );
 
     setPlans(res.data.data);
@@ -22,7 +22,7 @@ function Plans() {
 
   const createPlan = async () => {
     await axios.post(
-      "http://localhost:5000/admin/createPlan",
+      "${process.env.NEXT_PUBLIC_API_URL}/admin/createPlan",
       {
         name,
         pricePerMonth,
@@ -37,7 +37,7 @@ function Plans() {
 
   const updatePlan = async () => {
     await axios.put(
-      `http://localhost:5000/admin/updatePlan/${editId}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/admin/updatePlan/${editId}`,
       {
         name,
         pricePerMonth,
@@ -52,7 +52,7 @@ function Plans() {
 
   const deletePlan = async (id) => {
     await axios.delete(
-      `http://localhost:5000/admin/deletePlan/${id}`
+      `${process.env.NEXT_PUBLIC_API_URL}/admin/deletePlan/${id}`
     );
 
     loadPlans();

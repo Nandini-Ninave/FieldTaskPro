@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useState } from "react";
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/admin",
+  baseURL: process.env.NEXT_PUBLIC_API_URL || "${process.env.NEXT_PUBLIC_API_URL}/admin",
 });
 
 // Attach token to every request automatically

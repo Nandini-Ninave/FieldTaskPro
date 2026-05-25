@@ -19,7 +19,7 @@ function Attendance() {
     const getLocationHistory =
     async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/member/locationHistory/${userId}`);
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/member/locationHistory/${userId}`);
         setLocations(res.data);
       } catch (error) {
         console.log(error);
@@ -27,7 +27,7 @@ function Attendance() {
     };
     const getAttendance = async () => {
     try {
-        const res = await axios.get(`http://localhost:5000/member/attendance/${userId}`);
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/member/attendance/${userId}`);
         setAttendance(res.data);
     } catch (error) {
         console.log(error);
@@ -36,7 +36,7 @@ function Attendance() {
 
     const getSummary = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/member/attendanceSummary/${userId}`);
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/member/attendanceSummary/${userId}`);
       setSummary(res.data);
     } catch (error) {
       console.log(error);
@@ -45,7 +45,7 @@ function Attendance() {
   const getShiftReminder =
     async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/member/shiftReminder/${userId}`)
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/member/shiftReminder/${userId}`)
         setShiftReminder(res.data.message)
       } catch (error) {
         console.log(error);
@@ -55,7 +55,7 @@ function Attendance() {
   const getPunchReminder =
     async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/member/punchOutReminder/${userId}`)
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/member/punchOutReminder/${userId}`)
         setPunchReminder(res.data.message)
       } catch (error) {
         console.log(error);
@@ -64,7 +64,7 @@ function Attendance() {
   const getActiveSession =
     async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/member/attendance/active/${userId}`);
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/member/attendance/active/${userId}`);
         setActiveSession(res.data.attendance)
       } catch (error) {
         console.log(error);
@@ -88,7 +88,7 @@ function Attendance() {
         const lng = position.coords.longitude;
         try {
           const res =
-            await axios.post("http://localhost:5000/member/attendance/location-ping",
+            await axios.post("${process.env.NEXT_PUBLIC_API_URL}/member/attendance/location-ping",
               {
                 userId,
                 lat,
@@ -106,7 +106,7 @@ function Attendance() {
 
   const punchIn = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/member/punch",
+      const res = await axios.post("${process.env.NEXT_PUBLIC_API_URL}/member/punch",
         {
           userId,
           action: "in",
@@ -125,7 +125,7 @@ function Attendance() {
 
   const punchOut = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/member/punch",
+      const res = await axios.post("${process.env.NEXT_PUBLIC_API_URL}/member/punch",
         {
           userId,
           action: "out",
