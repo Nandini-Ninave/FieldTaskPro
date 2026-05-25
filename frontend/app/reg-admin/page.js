@@ -24,8 +24,8 @@ export default function AdminRegister() {
       fetchZones();
   },[])
    const fetchOrganizations =
-      async () => {
-
+      async (e) => {
+        e.preventDefault()
         try {
 
           const res =
@@ -64,7 +64,8 @@ export default function AdminRegister() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    console.log(e.preventDefault())
   try {
     // console.log(state.token);
     const res = await axios.post(
