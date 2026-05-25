@@ -91,7 +91,7 @@ export default function GeoFenceMap() {
 
         const res =
           await axios.get(
-            "${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations"
+            `${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations`
           );
 
         setOrganizations(
@@ -126,7 +126,7 @@ export default function GeoFenceMap() {
 
       await axios.post(
 
-        "${process.env.NEXT_PUBLIC_API_URL}/admin/create-zone",
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/create-zone`,
 
         {
           name,

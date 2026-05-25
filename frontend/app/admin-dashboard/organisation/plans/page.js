@@ -14,7 +14,7 @@ function Plans() {
 
   const loadPlans = async () => {
     const res = await axios.get(
-      "${process.env.NEXT_PUBLIC_API_URL}/admin/getAllPlans"
+      `${process.env.NEXT_PUBLIC_API_URL}/admin/getAllPlans`
     );
 
     setPlans(res.data.data);
@@ -22,7 +22,7 @@ function Plans() {
 
   const createPlan = async () => {
     await axios.post(
-      "${process.env.NEXT_PUBLIC_API_URL}/admin/createPlan",
+      `${process.env.NEXT_PUBLIC_API_URL}/admin/createPlan`,
       {
         name,
         pricePerMonth,

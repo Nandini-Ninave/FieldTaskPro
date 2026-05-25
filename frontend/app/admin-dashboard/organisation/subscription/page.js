@@ -18,22 +18,22 @@ function Subscriptions() {
   const [editId, setEditId] = useState(null);
 
   const loadSubscriptions = async () => {
-    const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getAllSubscriptions");
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/getAllSubscriptions`);
     setSubscriptions(res.data.data);
   };
 
   const loadOrganizations = async () => {
-    const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations");
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations`);
     setOrganizations(res.data);
   };
 
   const loadPlans = async () => {
-    const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getAllPlans");
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/getAllPlans`);
     setPlans(res.data.data);
   };
 
   const createSubscription = async () => {
-    await axios.post("${process.env.NEXT_PUBLIC_API_URL}/admin/createSubscription", {
+    await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/admin/createSubscription`, {
       organization,
       plan,
       status,

@@ -22,7 +22,7 @@ export default function AttendanceAdmin() {
     setLoading(true);
     try {
       const res = await axios.get(
-        "${process.env.NEXT_PUBLIC_API_URL}/editor/all",
+        `${process.env.NEXT_PUBLIC_API_URL}/editor/all`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -101,7 +101,7 @@ export default function AttendanceAdmin() {
   const punchIn = async () => {
     try {
       const res = await axios.post(
-        "${process.env.NEXT_PUBLIC_API_URL}/editor/punch",
+        `${process.env.NEXT_PUBLIC_API_URL}/editor/punch`,
         {
           userId,
           action: "in",
@@ -120,7 +120,7 @@ export default function AttendanceAdmin() {
   const punchOut = async () => {
     try {
       const res = await axios.post(
-        "${process.env.NEXT_PUBLIC_API_URL}/editor/punch",
+        `${process.env.NEXT_PUBLIC_API_URL}/editor/punch`,
         {
           userId,
           action: "out",

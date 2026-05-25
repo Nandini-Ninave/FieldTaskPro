@@ -36,7 +36,7 @@
 
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/users",
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/users`,
           {
             headers: {
               Authorization:
@@ -54,7 +54,7 @@
       async () => {
         try {
           const res =
-            await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations")
+            await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations`)
           setOrganizations(
             res.data
           );
@@ -65,7 +65,7 @@
 
     const fetchZones = async () => {
       try {
-        const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getzones")
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/getzones`)
         setZones(res.data);
       } catch (err) {
         console.log(err);
@@ -103,7 +103,7 @@
         ) {
           payload.assignedZones = [];
         }
-        await axios.post("${process.env.NEXT_PUBLIC_API_URL}/admin/userReg", payload,
+        await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/admin/userReg`, payload,
           {
             headers: {
               Authorization:

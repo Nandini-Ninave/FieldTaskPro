@@ -26,7 +26,7 @@ export default function AttendanceAdmin() {
 
     setLoading(true);
     try {
-      const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/all", {
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/all`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -88,7 +88,7 @@ export default function AttendanceAdmin() {
 
   const punchIn = async () => {
     try {
-      const res = await axios.post("${process.env.NEXT_PUBLIC_API_URL}/member/punch", {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/member/punch`, {
         userId,
         action: "in",
         lat: Number(lat),
@@ -102,7 +102,7 @@ export default function AttendanceAdmin() {
 
   const punchOut = async () => {
     try {
-      const res = await axios.post("${process.env.NEXT_PUBLIC_API_URL}/member/punch", {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/member/punch`, {
         userId,
         action: "out",
         lat: Number(lat),

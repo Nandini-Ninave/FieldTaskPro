@@ -13,12 +13,12 @@ function Organization() {
   const [editId, setEditId] = useState(null);
 
   const loadOrgs = async () => {
-    const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations");
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations`);
     setOrgs(res.data);
   };
 
   const createOrg = async () => {
-    await axios.post("${process.env.NEXT_PUBLIC_API_URL}/admin/createOrganization", {name, attendanceMode});
+    await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/admin/createOrganization`, {name, attendanceMode});
     resetForm();
     loadOrgs();
   };

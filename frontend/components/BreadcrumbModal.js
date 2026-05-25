@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 // import { api } from "../lib/api";
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || "${process.env.NEXT_PUBLIC_API_URL}/admin",
+  baseURL: process.env.NEXT_PUBLIC_API_URL ||   `${process.env.NEXT_PUBLIC_API_URL}/admin`,
 });
 
 // Attach token to every request automatically

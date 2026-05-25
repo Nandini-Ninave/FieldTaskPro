@@ -88,7 +88,7 @@ function Attendance() {
         const lng = position.coords.longitude;
         try {
           const res =
-            await axios.post("${process.env.NEXT_PUBLIC_API_URL}/member/attendance/location-ping",
+            await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/member/attendance/location-ping`,
               {
                 userId,
                 lat,
@@ -106,7 +106,7 @@ function Attendance() {
 
   const punchIn = async () => {
     try {
-      const res = await axios.post("${process.env.NEXT_PUBLIC_API_URL}/member/punch",
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/member/punch`,
         {
           userId,
           action: "in",
@@ -125,7 +125,7 @@ function Attendance() {
 
   const punchOut = async () => {
     try {
-      const res = await axios.post("${process.env.NEXT_PUBLIC_API_URL}/member/punch",
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/member/punch`,
         {
           userId,
           action: "out",

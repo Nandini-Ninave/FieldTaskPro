@@ -13,7 +13,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("${process.env.NEXT_PUBLIC_API_URL}/admin/login", {email: formData.email, password:formData.password});
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/admin/login`, {email: formData.email, password:formData.password});
       update(res.data);
       if (res.data.role === "admin") {
         router.push("/admin-dashboard");

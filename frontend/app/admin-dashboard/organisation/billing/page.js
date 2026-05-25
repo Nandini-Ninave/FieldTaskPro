@@ -16,18 +16,18 @@ function Billing() {
 
   // Fix 1: wrong URL — was pointing to getAllSubscriptions instead of getAllBillingRecords
   const loadRecords = async () => {
-    const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getAllBillingRecords");
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/getAllBillingRecords`);
     setRecords(res.data.data || []);
   };
 
   // Fix 2: loadSubscriptions was missing entirely
   const loadSubscriptions = async () => {
-    const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/admin/getAllSubscriptions");
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/getAllSubscriptions`);
     setSubscriptions(res.data.data || []);
   };
 
   const createRecord = async () => {
-    await axios.post("${process.env.NEXT_PUBLIC_API_URL}/admin/createBillingRecord", {
+    await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/admin/createBillingRecord`, {
       subscription,
       amount,
       paymentStatus,

@@ -28,12 +28,6 @@
         isActive: true,
       });
 
-
-
-    // ====================================
-    // LOAD DATA
-    // ====================================
-
     useEffect(() => {
 
       fetchUsers();
@@ -44,18 +38,12 @@
 
     }, []);
 
-
-
-    // ====================================
-    // USERS
-    // ====================================
-
     const fetchUsers = async () => {
 
       try {
 
         const res = await axios.get(
-          "${process.env.NEXT_PUBLIC_API_URL}/editor/users",
+          `${process.env.NEXT_PUBLIC_API_URL}/editor/users`,
           {
             headers: {
               Authorization:
@@ -72,12 +60,6 @@
       }
     };
 
-
-
-    // ====================================
-    // ORGANIZATIONS
-    // ====================================
-
     const fetchOrganizations =
       async () => {
 
@@ -85,7 +67,7 @@
 
           const res =
             await axios.get(
-              "${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations"
+              `${process.env.NEXT_PUBLIC_API_URL}/admin/getOrganizations`
             );
 
           setOrganizations(
@@ -109,7 +91,7 @@
       try {
 
         const res = await axios.get(
-          "${process.env.NEXT_PUBLIC_API_URL}/admin/getzones"
+          `${process.env.NEXT_PUBLIC_API_URL}/admin/getzones`
         );
 
         setZones(res.data);
@@ -176,7 +158,7 @@
         }
 
         await axios.post(
-          "${process.env.NEXT_PUBLIC_API_URL}/editor/userReg",
+          `${process.env.NEXT_PUBLIC_API_URL}/editor/userReg`,
 
           payload,
 
